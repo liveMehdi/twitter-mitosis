@@ -7,6 +7,9 @@
   body {
     @apply bg-[#15202B] scroll-smooth;
   }
+  b {
+    @apply text-[white]
+  }
 }
 
 @layer components {

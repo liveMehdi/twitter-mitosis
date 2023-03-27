@@ -73,7 +73,17 @@ function MessageFeed() {
           <CogIcon className="h-5 text-white" />
         </div>
       </div>
-
+    {!contacts && new Array(4).fill(0).map((each) => (
+      <div className={`  p-3 pb-10 flex cursor-pointer space-x-3 items-start w-full text-[15px] text-[#f7f9f9] font-bold hoverAnimationSec`}>
+      <div  className="h-11 w-11 rounded-full bg-[#cccccc61]" ></div>
+      <div className="space-y-[-3px]">
+        <div className="flex flex-col space-y-3">
+        <div className="font-normal bg-[#8b98a554] w-24 h-4"></div>
+          <h4 className="font-normal bg-[#8b98a535] w-48 h-4"></h4>
+        </div>
+      </div>
+    </div>
+    ))}
       {contacts?.map((contact) => (
         <div onClick={() => handleClick(contact)}>
           <UserMessage contact={contact} />

@@ -12,7 +12,6 @@ import { useRecoilState } from "recoil";
 import { modalState } from "../atoms/modalAtom";
 import Modal from "../components/Modal";
 import Sidebar from "../components/Sidebar";
-// import Widgets from "../components/Widgets";
 import Post from "../components/Post";
 import { db } from "../firebase";
 import { ArrowLeftIcon } from "@heroicons/react/solid";
@@ -20,6 +19,9 @@ import Head from "next/head";
 import { ArrowSmLeftIcon } from "@heroicons/react/outline";
 import Comment from "@/components/Comment";
 import Widgets from "@/components/Widgets";
+import fetch1 from "@/fetch1";
+import fetch2 from "@/fetch2";
+
 
 function PostPage({ trendingResults, followResults, providers }) {
   const { data: session } = useSession();
@@ -59,7 +61,7 @@ function PostPage({ trendingResults, followResults, providers }) {
         <link rel="icon" href="./favicon.ico" />
       </Head>
 
-      <main className="bg-[#8B98A5] min-h-screen flex max-w-[1500px] mx-auto">
+      <main className=" min-h-screen flex max-w-[1500px] mx-auto">
         <Sidebar />
 
         <div
@@ -69,7 +71,7 @@ function PostPage({ trendingResults, followResults, providers }) {
           <div
             className="flex items-center px-1.5 py-2 border-b border-gray-700
              text-[#d9d9d9] font-semibold text-xl gap-=x-4 sticky top-0 z-50
-             bg-[#8B98A5]"
+             "
           >
             <div className="hoverAnimation w-9 h-9 flex items-center justify-center xl:px-0">
               <ArrowLeftIcon
@@ -102,12 +104,8 @@ function PostPage({ trendingResults, followResults, providers }) {
 export default PostPage;
 
 export async function getServerSideProps(context) {
-  const trendingResults = await fetch(
-    "https://json.extendsclass.com/bin/ffb7102abc77"
-  ).then((res) => res.json());
-  const followResults = await fetch(
-    "https://json.extendsclass.com/bin/be612bc3d625"
-  ).then((res) => res.json());
+  const trendingResults = fetch1
+  const followResults = fetch2
   const providers = await getProviders();
   const session = await getSession(context);
 

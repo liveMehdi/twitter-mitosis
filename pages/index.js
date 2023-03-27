@@ -23,6 +23,8 @@ import { modalState } from "@/atoms/modalAtom";
 import Widgets from "@/components/Widgets";
 import { useEffect } from "react";
 import { db } from "@/firebase";
+import fetch1 from "@/fetch1";
+import fetch2 from "@/fetch2";
 
 export default function Home({ trendingResults, followResults, providers }) {
   const { data: session } = useSession();
@@ -74,12 +76,8 @@ export default function Home({ trendingResults, followResults, providers }) {
 }
 
 export async function getServerSideProps(context) {
-  const trendingResults = await fetch(
-    "https://json.extendsclass.com/bin/a7f0da22fb6c"
-  ).then((res) => res.json());
-  const followResults = await fetch(
-    "https://json.extendsclass.com/bin/0ca32fec7765"
-  ).then((res) => res.json());
+  const trendingResults = fetch1
+  const followResults = fetch2
   const providers = await getProviders();
   const session = await getSession(context);
 

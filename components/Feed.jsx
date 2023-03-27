@@ -9,6 +9,7 @@ import { useSession } from "next-auth/react";
 function Feed() {
   const { data: session } = useSession();
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(
     () =>
@@ -16,8 +17,10 @@ function Feed() {
         query(collection(db, "posts"), orderBy("timestamp", "desc")),
         (snapshot) => {
           setPosts(snapshot.docs);
+          setLoading(false);
         }
       ),
+
     [db]
   );
 
@@ -39,8 +42,19 @@ function Feed() {
       <Input />
 
       <div className="pb-72">
-        {posts.map((post) => (
-          <Post key={post.id} id={post.id} post={post.data()} />
+        {!loading &&
+          posts.map((post) => (
+            <Post key={post.id} id={post.id} post={post.data()} />
+          ))}
+        {loading && new Array(4).fill(0).map((item) => (
+          <div className="p-3 flex pr-12 pb-8">
+            <div className="h-11 w-11 bg-[#8b98a554] rounded-full"></div>
+            <div className="pl-5 pt-1 flex flex-col space-y-4 w-full">
+              <div className="w-52 h-4 bg-[#8b98a554]"></div>
+              <div className="w-[80%] h-4 bg-[#8b98a554]"></div>
+              <div className="w-[90%] bg-[#8b98a533] h-24"></div>
+            </div>
+          </div>
         ))}
       </div>
     </div>

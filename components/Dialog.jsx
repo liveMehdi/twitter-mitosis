@@ -50,24 +50,32 @@ export default function DialogModal() {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-[#1c1b1b] p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900"
+                    className="text-lg  leading-6 text-gray-100  pb-2 font-bold"
                   >
-                    Twitter Clone
+                    Twitter Mitosis by <span className='text-[#1d9bf0]'>Mehdi</span>
                   </Dialog.Title>
                   <div className="mt-2">
-                    <p className="text-sm text-gray-500">
-                      Your payment has been successfully submitted. We’ve sent
-                      you an email with all of the details of your order.
+                    <p className="text-sm text-[#c8e6f2] space-y-2">
+                      
+                      <p><span className='text-gray-100 font-semibold'>You can:</span> Post text/emoji/images/gifs, like/comment on posts, message other registered users, log-in via google.</p>
+                      <p>• Utilises <span className='text-white'>Firebase V9</span> for fully functional<b> posting, commenting, liking, and messaging.</b></p>
+                      <p>• Utilises <span className='text-white'>NextAuth</span> for <b>Google Authentication.</b></p>
+                      <p>• Utilises <span className='text-white'>NextJS & TailwindCSS</span> for <b>fully responsive, accurate design</b>.</p>
+                      <p>• Utilises <span className='text-white'>Recoil</span> for robust <b>state management</b>.</p>
+                      <p>• Utilises libraries <span className='text-white'>MaterialUI, Emoji Mart, and skeleton loading states</span> for <b>user-friendly UI</b> etc.</p>
+                      <p>• Mocks a API serverside render for <b>widgets.</b></p>
+                     <p></p>
                     </p>
+                    
                   </div>
 
-                  <div className="mt-4">
+                  <div className="mt-5">
                     <button
                       type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="inline-flex justify-center rounded-md border border-transparent bg-[#00abeec0] px-4 py-2 text-sm font-medium transition text-white hover:bg-gray-200 hover:text-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       onClick={closeModal}
                     >
                       Alright!
