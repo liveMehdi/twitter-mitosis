@@ -12,9 +12,7 @@ const nextConfig = {
     ],
     formats: ["image/webp"],
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  
 };
 
 module.exports = nextConfig;
