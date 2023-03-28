@@ -29,7 +29,7 @@ import fetch2 from "@/fetch2";
 export default function Home({ trendingResults, followResults, providers }) {
   const { data: session } = useSession();
   const [isOpen, setIsOpen] = useRecoilState(modalState);
-  if (!session) return <Login providers={providers} />;
+  
 
   async function effectHandler() {
     const userCollectionUidRef = await query(
@@ -53,6 +53,8 @@ export default function Home({ trendingResults, followResults, providers }) {
   useEffect(() => {
     effectHandler()
   }, []);
+
+if (!session) return <Login providers={providers} />;
 
   return (
     <div className="">

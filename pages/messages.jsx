@@ -17,7 +17,7 @@ import MessageFeed from "@/components/MessageFeed";
 import DirectMessage from "@/components/DirectMessage";
 import { dmState } from "@/atoms/modalAtom";
 
-function messages({ providers }) {
+function Messages({ providers }) {
   const { data: session } = useSession();
   const [dm, setDm] = useRecoilState(dmState)
   if (!session) return <Login providers={providers} />;
@@ -42,7 +42,7 @@ function messages({ providers }) {
   );
 }
 
-export default messages;
+export default Messages;
 
 export async function getServerSideProps(context) {
   const providers = await getProviders();

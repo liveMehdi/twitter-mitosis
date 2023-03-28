@@ -46,8 +46,8 @@ function Feed() {
           posts.map((post) => (
             <Post key={post.id} id={post.id} post={post.data()} />
           ))}
-        {loading && new Array(4).fill(0).map((item) => (
-          <div className="p-3 flex pr-12 pb-8">
+        {loading && new Array(4).fill(0).map((item, index) => (
+          <div key={index} className="p-3 flex pr-12 pb-8">
             <div className="h-11 w-11 bg-[#8b98a554] rounded-full"></div>
             <div className="pl-5 pt-1 flex flex-col space-y-4 w-full">
               <div className="w-52 h-4 bg-[#8b98a554]"></div>

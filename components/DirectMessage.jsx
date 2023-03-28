@@ -196,10 +196,10 @@ function DirectMessage({ dm }) {
           </div>
           <div className="w-full h-full pt-4 flex flex-col text-white text-[15px]">
             {messageArray &&
-              messageArray.map((mess) => {
+              messageArray.map((mess, index) => {
                 if (mess.senderUid === session.user?.uid) {
                   return (
-                    <div className="w-full pb-3 flex flex-col items-end">
+                    <div key={index} className="w-full pb-3 flex flex-col items-end">
                       <div className="w-fit py-3 px-4 bg-[#1d9bf0] max-w-[340px] rounded-t-3xl rounded-bl-3xl">
                         {mess.messageText}
                       </div>
@@ -207,7 +207,7 @@ function DirectMessage({ dm }) {
                   );
                 } else if (mess.senderUid === recipient.uid) {
                   return (
-                    <div className="w-full pb-3 flex flex-col">
+                    <div key={index} className="w-full pb-3 flex flex-col">
                       <div className="w-fit py-3 px-4 bg-[#3d5466] max-w-[340px] rounded-t-3xl rounded-br-3xl mb-[5px]">
                         {mess.messageText}
                       </div>
