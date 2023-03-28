@@ -21,6 +21,7 @@ import Comment from "@/components/Comment";
 import Widgets from "@/components/Widgets";
 import fetch1 from "@/fetch1";
 import fetch2 from "@/fetch2";
+import Login from "@/components/Login";
 
 
 function PostPage({ trendingResults, followResults, providers }) {
