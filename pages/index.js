@@ -29,9 +29,12 @@ import fetch2 from "@/fetch2";
 export default function Home({ trendingResults, followResults, providers }) {
   const { data: session } = useSession();
   const [isOpen, setIsOpen] = useRecoilState(modalState);
-  if (!session) return <Login providers={providers} />;
+ 
 
   async function effectHandler() {
+    if (!session) {
+      return
+    }
     const userCollectionUidRef = await query(
       collection(db, "users"),
       where("uid", "==", session?.user?.uid)
@@ -52,9 +55,9 @@ export default function Home({ trendingResults, followResults, providers }) {
 
   useEffect(() => {
     effectHandler()
-  }, []);
+  }, [session]);
 
-
+ if (!session) return <Login providers={providers} />;
 
   return (
     <div className="">
