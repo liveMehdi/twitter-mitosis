@@ -5,7 +5,7 @@
 ## About
 Twitter Mitosis is a twitter clone which uses Firebase.
 
-https://movies-react-v2.vercel.app/
+https://twitter-mitosis.vercel.app/
 
 ## Features
 * Google sign-in
