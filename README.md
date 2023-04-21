@@ -13,6 +13,7 @@ https://movies-react-v2.vercel.app/
 * Tweeting images/gifs
 * Liking & commenting
 * Messaging Users
+* Widgets (mock api)
 * Accurate, responsive UI
 
 ## Tech/Stack
