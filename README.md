@@ -19,7 +19,7 @@ https://twitter-mitosis.vercel.app/
 ## Tech/Stack
 * NextJS
 * TailwindCSS
-* NextAuth
-* Firebase
+* NextAuth (Authentication)
+* Firebase (Storage)
 * Recoil
 * Vercel CI/CD
